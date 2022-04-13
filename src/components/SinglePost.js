@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import Loading from "./Loading";
 
 const builder = imageUrlBuilder(sanityClient);
 const urlFor = (source) => {
@@ -36,7 +37,7 @@ const SinglePost = () => {
   }, [slug]);
 
   if (!singlePost) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
   console.log(singlePost);
   return (

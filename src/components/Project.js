@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
+import Loading from "./Loading";
 
 const Project = () => {
-  const [projectData, setProjectData] = useState([]);
+  const [projectData, setProjectData] = useState(null);
 
   useEffect(() => {
     sanityClient
@@ -21,6 +22,11 @@ const Project = () => {
       .then((data) => setProjectData(data))
       .catch(console.error);
   }, []);
+
+  if (!projectData) {
+    return <Loading />;
+  }
+
   return (
     <main className="bg-green-100 min-h-screen p-12">
       <section className="container mx-auto">
@@ -28,7 +34,7 @@ const Project = () => {
         <h2 className="text-lg text-gray-600 flex justify-center mb-12">
           Welcome to my projects page!
         </h2>
-        <section className="grid grid-cols-2 gap-8">
+        <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectData &&
             projectData.map((project, index) => (
               <article

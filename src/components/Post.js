@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../client";
+import Loading from "./Loading";
 
 const Post = () => {
-  const [postData, setPostData] = useState([]);
+  const [postData, setPostData] = useState(null);
 
   useEffect(() => {
     sanityClient
@@ -23,6 +24,10 @@ const Post = () => {
       .then((data) => setPostData(data))
       .catch(console.error);
   }, []);
+
+  if (!postData) {
+    return <Loading />;
+  }
 
   return (
     <main className="bg-green-100 min-h-screen p-12">
