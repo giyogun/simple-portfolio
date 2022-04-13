@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route element={<Home />} path="/"></Route>
         <Route element={<About />} path="/about"></Route>
-        <Route element={<SinglePost />} path="/post:slug"></Route>
+        <Route element={<SinglePost />} path="/post/:slug"></Route>
         <Route element={<Post />} path="/post"></Route>
         <Route element={<Project />} path="/project"></Route>
       </Routes>
