@@ -28,7 +28,7 @@ const NavBar = () => {
             Blog
           </NavLink>
           <NavLink
-            to="/projects"
+            to="/project"
             className={(x) =>
               x.isActive
                 ? "inline-flex items-center py-3 px-3 my-6 rounded text-red-100  bg-red-700 hover:text-green-800"

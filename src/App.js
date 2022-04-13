@@ -3,8 +3,8 @@ import About from "./components/About";
 import Home from "./components/Home";
 import Post from "./components/Post";
 import SinglePost from "./components/SinglePost";
-import NavBar from "./NavBar";
-import Project from "./Project";
+import NavBar from "./components/NavBar";
+import Project from "./components/Project";
 
 function App() {
   return (
